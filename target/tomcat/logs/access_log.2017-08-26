@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/index.action;jsessionid=07AEC8AEE1C67FF54F93A5A1B787A91D HTTP/1.1" 200 2045 http-bio-8081-exec-1 4731
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/js/messages_zh.min.js HTTP/1.1" 200 1175 http-bio-8081-exec-7 36
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/css/bootstrap.min.css HTTP/1.1" 200 121200 http-bio-8081-exec-3 71
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/img/logo.png HTTP/1.1" 200 11003 http-bio-8081-exec-9 32
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/js/bootstrap.min.js HTTP/1.1" 200 37045 http-bio-8081-exec-5 108
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/js/jquery.validate.min.js HTTP/1.1" 200 23261 http-bio-8081-exec-6 138
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /hello/js/jquery-1.12.4.min.js HTTP/1.1" 200 97166 http-bio-8081-exec-4 155
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:13 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8081-exec-4 0
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:16 +0800] "POST /hello/index.action;jsessionid=DE1441B27988D50EEEFAC3D565B34B03 HTTP/1.1" 200 2274 http-bio-8081-exec-4 937
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:16 +0800] "GET /hello/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028 http-bio-8081-exec-2 81
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:16 +0800] "GET /hello/video/videoManage.action HTTP/1.1" 200 9158 http-bio-8081-exec-4 362
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:18 +0800] "GET /hello/count/countManage.action HTTP/1.1" 200 2288 http-bio-8081-exec-4 106
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:11:58:18 +0800] "GET /hello/js/echarts.js HTTP/1.1" 200 363230 http-bio-8081-exec-4 56
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:14:14:13 +0800] "POST /hello/index.action;jsessionid=DE1441B27988D50EEEFAC3D565B34B03 HTTP/1.1" 200 2274 http-bio-8081-exec-6 2492
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:14:14:15 +0800] "GET /hello/video/videoManage.action HTTP/1.1" 200 9158 http-bio-8081-exec-6 1321
+0:0:0:0:0:0:0:1 - - [26/Aug/2017:14:14:19 +0800] "GET /hello/count/countManage.action HTTP/1.1" 200 2091 http-bio-8081-exec-2 2353
