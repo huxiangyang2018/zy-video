@@ -1,10 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="${BaseContext}">
+    <base href="<%=basePath%>">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
@@ -23,11 +27,11 @@
             <h2>我的资料</h2>
             <div id="profile_tab">
                <ul class="profile_tab_header f_left clearfix">
-                    <li><a href="front/user/profile.do">更改资料</a></li>
+                    <li><a href="front/user/profile.action">更改资料</a></li>
                     <li class="profile_tab_line">|</li>
-                    <li><a href="front/user/avatar.do">更改头像</a></li>
+                    <li><a href="front/user/avatar.action">更改头像</a></li>
                     <li class="profile_tab_line">|</li>
-                    <li><a href="front/user/password.do">密码安全</a></li>
+                    <li><a href="front/user/password.action">密码安全</a></li>
                 </ul>
                 <div class="proflle_tab_body">
                     <div class="proflle_tab_workplace clearfix">
@@ -37,17 +41,17 @@
                             </c:if>
                             
                             <c:if test="${not empty user.headUrl}">
-                                  <img width="200px" height="200px" src="${user.headUrl}">
+                                  <img width="200px" height="200px" src="http://localhost:8081/pic/${user.headUrl}">
                             </c:if>
                             
                             
                             <p style="text-align: center;">当前头像</p>
                         </div>
                         <div class="profile_ifo_area">
-                            <form id="upload_form" enctype="multipart/form-data" method="post" action="front/user/avatar.do" >
+                            <form id="upload_form" enctype="multipart/form-data" method="post" action="front/user/avatar.action" >
                                 <p>请选择图像文件</p>
                                 <div>
-                                <input type="file" class="form-control" name="image_file" id="image_file" accept="image/png,image/jpeg,image/jpg"/>
+                                <input type="file" class="form-control" name="headUrl" id="image_file" accept="image/png,image/jpeg,image/jpg"/>
                                 <input class="btn btn-primary" type="submit" value="上传" />
                                 </div>
                             </form>

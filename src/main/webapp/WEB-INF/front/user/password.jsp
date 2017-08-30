@@ -1,10 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="${BaseContext}">
+    <base href="<%=basePath%>">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
@@ -23,11 +27,11 @@
             <h2>我的资料</h2>
             <div id="profile_tab">
                 <ul class="profile_tab_header f_left clearfix">
-                    <li><a href="front/user/profile.do">更改资料</a></li>
+                    <li><a href="front/user/profile.action">更改资料</a></li>
                     <li class="profile_tab_line">|</li>
-                    <li><a href="front/user/avatar.do">更改头像</a></li>
+                    <li><a href="front/user/avatar.action">更改头像</a></li>
                     <li class="profile_tab_line">|</li>
-                    <li><a href="front/user/password.do">密码安全</a></li>
+                    <li><a href="front/user/password.action">密码安全</a></li>
                 </ul>
                 <div class="proflle_tab_body">
                     <div class="proflle_tab_workplace clearfix">
@@ -50,7 +54,7 @@
 				                <strong>${message}</strong>
 				            </div>
 				            </c:if>
-                            <form action="front/user/password.do" method="post">
+                            <form action="front/user/password.action" method="post" id="modify">
                                 <div class="form_group">
                                     <span class="dd">旧&#x3000;密&#x3000;码：</span>
                                     <input type="password" id="oldPassword" name="oldPassword">
@@ -76,7 +80,40 @@
     <jsp:include page="ufooter.jsp"></jsp:include>
     <%@include file="../include/script.html"%>
    <script type="text/javascript">
-
+   $('#modify').validate({
+	   submitHandler:function(form){
+			console.log($('#modify').serialize());
+			//使用ajax的post方法提交登录信息
+			$.post('front/user/checkPwd.action',$('#modify').serialize(),function(result){
+				
+				if(result.success){
+					form.submit();
+				}else{
+					alert(result.message);
+				}
+			},'json');
+			
+		},
+	   
+	   
+	   
+	   
+   
+		rules:{//写校验规则的
+			newPassword:{
+				required:true,
+				minlength:3
+			},
+			newPasswordAgain:{
+				required:true,
+				equalTo:'#newPassword'
+			}
+		},
+		messages:{//写提示信息的
+			newPassword:'密码是必须填写的，3-30个字符',
+			newPasswordAgain:'两次密码必须输入一致'
+		}
+	});	
    </script>
 </body>
 </html>

@@ -18,21 +18,21 @@
 	<menu>
 		<div class="container clearfix">
 			<ul class="clearfix f_left">
-				<li><a href="index.do">首页</a></li>
-				<li class="menu_active"><a href="front/user/index.do">个人中心</a></li>
+				<li><a href="front/user/index.action">首页</a></li>
+				<li class="menu_active"><a href="front/user/person.action">个人中心</a></li>
 			</ul>
 			<div id="user_bar">
 				<a href="front/user/index.action">
-					<c:if test="${empty sessionScope._front_user.headUrl}">
+					<c:if test="${empty user.headUrl}">
 						<img id="avatar" src="static/img/avatar_lg.png" alt="">
 					</c:if>
 
-					<c:if test="${not empty sessionScope._front_user.headUrl}">
-						<img id="avatar" src="${user.headUrl}" alt="">
+					<c:if test="${not empty user.headUrl}">
+						<img id="avatar" src="http://localhost:8081/pic/${user.headUrl}" alt="">
 					</c:if>
 
 				</a>
-				<a href="front/user/logout.do" id="lay_out">退出</a>
+				<a href="front/user/logout.action" id="lay_out">退出</a>
 			</div>
 		</div>
 	</menu>

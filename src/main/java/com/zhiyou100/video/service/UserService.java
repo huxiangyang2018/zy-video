@@ -14,4 +14,10 @@ public interface UserService {
 
 	void updateUser(User user);
 
+	void updateUserSelect(User u);
+
+	List<User> findUserByPwd(String pwd);
+
+	User findUserById(int id);
+
 }

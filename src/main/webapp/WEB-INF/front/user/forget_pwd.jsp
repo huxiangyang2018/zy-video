@@ -28,14 +28,14 @@
     </header>
     <main>
         <div class="container">
-            <form class="ma" action="front/user/forgetpwd.action" method="post" >
+            <form class="ma" id="mailForm" action="front/user/forgetpwd.action" method="post">
                 <div class="form_header">
                     <div class="form_title">
                         <h2>忘记密码</h2>
                         <span>通过注册邮箱重设密码</span>
                     </div>
                     <div class="form_back">
-                        <a href="index.do">返回立即登录</a>
+                        <a href="index.action">返回立即登录</a>
                     </div>
                 </div>
                 <div class="form_body">
@@ -59,7 +59,7 @@
 			//改为ajax提交邮箱
 			if(email!=null&&email!=''){
 				$.post('front/user/sendemail.action',{email:email},function(data){
-					console.log(data);
+					
 					if(data.success){
 						alert('验证码已发送到邮箱，请注意查收');
 					}else{
@@ -68,6 +68,38 @@
 				},'json');
 			}
 		}
+		
+		//验证验证码
+		$('#mailForm').validate({
+			submitHandler:function(form){
+				
+				console.log($('#mailForm').serialize());
+				
+				$.post('front/user/verify.action',$('#mailForm').serialize(),function(result){
+					
+					/* console.log(result); */
+					if(result.success){
+						form.submit();
+					}else{
+						alert(result.message);
+					}
+				},'json');
+				
+			},
+			
+			rules:{//写校验规则的
+				email:{
+					required:true,
+				},
+				captcha:{
+					required:true,
+				}
+			},
+			messages:{//写提示信息的
+				email:"名称必须是已注册邮箱",
+				captcha:'请填写验证码'
+			}
+		});	
     </script>
 </body>
 

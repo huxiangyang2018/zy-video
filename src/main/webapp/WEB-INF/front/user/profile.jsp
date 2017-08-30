@@ -1,10 +1,15 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="${BaseContext}">
+    <base href="<%=basePath%>">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
@@ -23,11 +28,11 @@
             <h2>我的资料</h2>
             <div id="profile_tab">
                 <ul class="profile_tab_header f_left clearfix">
-                    <li><a href="front/user/profile.do">更改资料</a></li>
+                    <li><a href="front/user/profile.action">更改资料</a></li>
                     <li class="profile_tab_line">|</li>
-                    <li><a href="front/user/avatar.do">更改头像</a></li>
+                    <li><a href="front/user/avatar.action">更改头像</a></li>
                     <li class="profile_tab_line">|</li>
-                    <li><a href="front/user/password.do">密码安全</a></li>
+                    <li><a href="front/user/password.action">密码安全</a></li>
                 </ul>
                 <div class="proflle_tab_body">
                     <div class="proflle_tab_workplace clearfix">
@@ -37,11 +42,11 @@
                             </c:if>
 
                             <c:if test="${not empty user.headUrl}">
-                                <img width="200px" height="200px" src="${user.headUrl}">
+                                <img width="200px" height="200px" src="http://localhost:8081/pic/${user.headUrl}">
                             </c:if>
                         </div>
                         <div class="profile_ifo_area">
-                            <form action="front/user/profile.do" method="post">
+                            <form action="front/user/profile.action" method="post">
                                 <div class="form_group">
                                     <span class="dd">昵&#x3000;称：</span><input type="text" name="nickName" value="${user.nickName}" >
                                 </div>
@@ -52,7 +57,8 @@
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">生&#x3000;日：</span>
-                                    <input type="date"  name="birthdayStr" value="${user.birthdayStr}">
+                                    <input value="<fmt:formatDate value="${user.birthday }" type="both" pattern="yyyy-MM-dd"/>"
+                                    	type="date"  name="birthday" >
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">邮&#x3000;箱：</span>
@@ -68,8 +74,9 @@
                                     </div>
                                 </div>
                                 <div class="form_submit dd">
+                                	<input type="hidden" name="id" value="${user.id }">
                                     <input type="submit"  value="保&#x3000;存">
-                                    <a href="front/user/profile.do">重置</a>
+                                    <a href="front/user/profile.action">重置</a>
                                 </div>
                             </form>
                         </div>

@@ -2,6 +2,8 @@ package com.zhiyou100.video.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.zhiyou100.video.util.MD5Utils;
 
 public class User {
@@ -10,7 +12,7 @@ public class User {
     private String nickName;
 
     private Integer sex;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthday;
 
     private String email;

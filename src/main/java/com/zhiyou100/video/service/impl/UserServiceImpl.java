@@ -40,4 +40,24 @@ public class UserServiceImpl implements UserService {
 	public void updateUser(User user) {
 		um.updateByPrimaryKeySelective(user);
 	}
+
+	@Override
+	public void updateUserSelect(User u) {
+		UserExample ue = new UserExample();
+		ue.createCriteria().andEmailEqualTo(u.getEmail());
+		um.updateByExampleSelective(u, ue);
+	}
+
+	@Override
+	public List<User> findUserByPwd(String pwd) {
+		UserExample ue = new UserExample();
+		ue.createCriteria().andPasswordEqualTo(pwd);
+		return um.selectByExample(ue);
+	}
+
+	@Override
+	public User findUserById(int id) {
+		// TODO Auto-generated method stub
+		return um.selectByPrimaryKey(id);
+	}
 }

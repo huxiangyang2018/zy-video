@@ -9,8 +9,8 @@
 
 		<c:if test="${not empty user}">
 			<div id="userBlock" style="float:right">
-				<a href="front/user/logout.do">退出</a>
-				<a href="front/user/index.do" id="account">${user.email}</a>
+				<a href="front/user/logout.action">退出</a>
+				<a href="front/user/person.action" id="account">${user.email}</a>
 			</div>
 		</c:if>
 		<c:if test="${empty user}">
@@ -21,7 +21,7 @@
 		</c:if>
 
 		<a onclick="JavaScript:addFavorite2()"><img src="static/img/sc.png" draggable="false">加入收藏</a>
-		<a target="_blank" href="../index.action"><img src="static/img/we.png" draggable="false">后台管理</a>
+		<a target="_blank" href="index.action"><img src="static/img/we.png" draggable="false">后台管理</a>
 		<a class="color_e4"><img src="static/img/phone.png" draggable="false"> 0371-88888598&#x3000;&#x3000;4006-371-555</a>
 
 	</div>

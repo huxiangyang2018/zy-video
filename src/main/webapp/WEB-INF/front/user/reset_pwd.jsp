@@ -27,7 +27,7 @@
     </header>
     <main>
         <div class="container">
-            <form class="ma" action="resetpwd.do" method="post">
+            <form class="ma" action="front/user/resetpwd.action" method="post" id="reset">
                <input type="hidden" name="email" value="${email}"/>
                 <input type="hidden" name="captcha" value="${captcha}"/>
                 <div class="form_header">
@@ -45,6 +45,28 @@
             </form>
         </div>
     </main>
+<%@include file="../include/script.html"%>    
+    <script type="text/javascript">
+    $('#reset').validate({
+		rules:{//写校验规则的
+			password:{
+				required:true,
+				minlength:3
+			},
+			pwdAgain:{
+				required:true,
+				equalTo:'#password'
+			}
+		},
+		messages:{//写提示信息的
+			password:'密码是必须填写的，3-30个字符',
+			pwdAgain:'两次密码必须输入一致'
+		}
+	});	
+    </script>
+    
+    
+    
 </body>
 
 </html>
