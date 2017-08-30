@@ -7,12 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zhiyou100.video.model.Course;
-import com.zhiyou100.video.model.Speaker;
 import com.zhiyou100.video.model.Subject;
-import com.zhiyou100.video.model.Video;
 import com.zhiyou100.video.service.CourseService;
 import com.zhiyou100.video.service.SubjectService;
 

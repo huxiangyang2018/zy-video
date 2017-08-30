@@ -8,7 +8,7 @@
 <html>
 
 <head>
-<base href="${BaseContext}">
+<base href="<%=basePath%>">
 <meta name="viewport"
 	content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta charset="utf-8">
@@ -49,7 +49,7 @@
 					</div>
 					<ul>
 						<c:forEach items="${course.videoList }" var="video">
-							<li class="section-main" onclick="getVideo(${video.id})">
+							<li class="section-main" onclick="(getVideo(${video.id}))">
 							<div class="thum" style="background-image: url(${video.videoImageUrl})"></div>
 								<p>${video.videoTitle }</p>
 								<div class="classify-v-info">
