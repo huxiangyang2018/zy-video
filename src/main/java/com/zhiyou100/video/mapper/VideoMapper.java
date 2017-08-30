@@ -34,5 +34,11 @@ public interface VideoMapper {
 
 	List<Video> findAvgCourse();
 
+	Video findVideoByVideoId(Integer videoId);
+
+	List<Video> finAllVideosByCId(Integer cId);
+
+	int findSid(Integer courseId);
+
 	
 }

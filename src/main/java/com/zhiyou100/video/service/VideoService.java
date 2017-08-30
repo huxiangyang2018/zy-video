@@ -22,6 +22,14 @@ public interface VideoService {
 
 	List<Video> findAvgCourse();
 
+	List<Video> finAllVideos();
+
+	Video findVideoByVideoId(Integer videoId);
+
+	List<Video> finAllVideosByCId(Integer cId);
+
+	int findSIdByCid(Integer courseId);
+
 	
 
 }

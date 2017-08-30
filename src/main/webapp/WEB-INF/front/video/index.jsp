@@ -1,10 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <base href="${BaseContext}">
+    <base href="<%=basePath%>">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
@@ -23,7 +27,7 @@
 
 <div>
     <!--面包屑导航-->
-    <div class="container mian-nav">公开课 / ${subject.subjectName}</div>
+    <div class="container mian-nav">公开课 /${subject.subjectName}</div>
     <input type="hidden" id="videoId" value="${videoId}">
     <div id="content">
 		
@@ -37,10 +41,10 @@
     <script>
         $(function () {
         	var id = $('#videoId').val();
-           $('#content').load('front/video/videoData.do?videoId='+id);
+           $('#content').load('front/video/videoData.action?videoId='+id);
            
            //播放量统计,不需要返回结果处理
-           $.get('front/video/state.do?videoId='+id);
+           $.get('front/video/state.action?videoId='+id);
 		});
     </script>
 </body>

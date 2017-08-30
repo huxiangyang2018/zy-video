@@ -8,4 +8,6 @@ public interface SubjectService {
 
 	List<Subject> findAllSubject();
 
+	Subject findSubjectById(Integer subjectId);
+
 }

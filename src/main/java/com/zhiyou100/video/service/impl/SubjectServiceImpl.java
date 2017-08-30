@@ -20,6 +20,12 @@ public class SubjectServiceImpl implements SubjectService{
 		// TODO Auto-generated method stub
 		return sm.selectByExample(null);
 	}
+
+	@Override
+	public Subject findSubjectById(Integer subjectId) {
+		
+		return sm.selectByPrimaryKey(subjectId);
+	}
 	
 	
 	

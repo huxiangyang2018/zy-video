@@ -30,5 +30,7 @@ public interface CourseMapper {
 
 	List<Course> findAllCourse();
 
+	List<Course> findFrontCourse(Integer subjectId);
+
 
 }

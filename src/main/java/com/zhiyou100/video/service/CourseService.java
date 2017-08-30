@@ -16,6 +16,6 @@ public interface CourseService {
 
 	void deleteCourse(Integer id);
 
-
+	List<Course> findFrontCourse(Integer subjectId);
 
 }

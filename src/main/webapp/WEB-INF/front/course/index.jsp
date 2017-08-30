@@ -29,11 +29,11 @@
 	<div id="app">
 		<!--banner图-->
 		<div class="banner"
-			style="background-image: url('static/img/banner-${subjectId}.jpg')"></div>
+			style="background-image: url('static/img/banner-${subject.id}.jpg')"></div>
 
 		<!--面包屑导航-->
 		<div class="container mian-nav" id="navDiv">公开课 /${subject.subjectName }</div>
-		<input type="hidden" id="subjectId" value="${subjectId}">
+		<input type="hidden" id="subjectId" value="${subject.id}">
 		<div class="classify">
 			<div class="container" id="dataContainer">
 			<c:forEach items="${courses }" var="course">
@@ -49,14 +49,14 @@
 					</div>
 					<ul>
 						<c:forEach items="${course.videoList }" var="video">
-							<li class="section-main" onclick="(getVideo(${video.id}))">
+							<li class="section-main" onclick="getVideo(${video.id})">
 							<div class="thum" style="background-image: url(${video.videoImageUrl})"></div>
 								<p>${video.videoTitle }</p>
 								<div class="classify-v-info">
 									<span class="count" title="观看次数">
 									<img src="static/img/count.png" alt="">${video.videoPlayTimes }</span>
 									<span class="duration" title="视频时长">
-										<img src="static/img/player.png" alt="">${video.videoLengthStr }</span>
+										<img src="static/img/player.png" alt="">${video.videoLength }</span>
 								</div>
 							</li>
 						</c:forEach>
@@ -76,7 +76,7 @@
 	<script type="text/javascript">
 		function getVideo(id){
 			var subjectId=$('#subjectId').val();
-			location.href='front/video/index.do?videoId='+id+'&subjectId='+subjectId;
+			location.href='front/video/index.action?videoId='+id+'&subjectId='+subjectId;
 		}
 	</script>
 

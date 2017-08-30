@@ -27,10 +27,42 @@ public class Video {
     
     private String speakerName;
     
+    private String speakerDescr;
+    
+    private String speakerHeadUrl;
+    
     private String courseName;
     
+    private String courseDescr;
+    
     private Integer page;
+    
+    
+    public String getCourseDescr() {
+		return courseDescr;
+	}
 
+	public void setCourseDescr(String courseDescr) {
+		this.courseDescr = courseDescr;
+	}
+
+	public String getSpeakerDescr() {
+		return speakerDescr;
+	}
+
+	public void setSpeakerDescr(String speakerDescr) {
+		this.speakerDescr = speakerDescr;
+	}
+
+	public String getSpeakerHeadUrl() {
+		return speakerHeadUrl;
+	}
+
+	public void setSpeakerHeadUrl(String speakerHeadUrl) {
+		this.speakerHeadUrl = speakerHeadUrl;
+	}
+
+    
 	public Integer getId() {
 		return id;
 	}
@@ -150,12 +182,11 @@ public class Video {
 		return "Video [id=" + id + ", videoTitle=" + videoTitle + ", speakerId=" + speakerId + ", courseId=" + courseId
 				+ ", videoLength=" + videoLength + ", videoImageUrl=" + videoImageUrl + ", videoUrl=" + videoUrl
 				+ ", videoDescr=" + videoDescr + ", insertTime=" + insertTime + ", updateTime=" + updateTime
-				+ ", videoPlayTimes=" + videoPlayTimes + ", speakerName=" + speakerName + ", courseName=" + courseName
-				+ ", page=" + page + "]";
+				+ ", videoPlayTimes=" + videoPlayTimes + ", speakerName=" + speakerName + ", speakerDescr="
+				+ speakerDescr + ", speakerHeadUrl=" + speakerHeadUrl + ", courseName=" + courseName + ", courseDescr="
+				+ courseDescr + ", page=" + page + "]";
 	}
 
-	
-	
     
     
 }

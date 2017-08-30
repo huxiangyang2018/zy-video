@@ -51,6 +51,23 @@ public class VideoServiceImpl implements VideoService {
 		// TODO Auto-generated method stub
 		return vm.findAvgCourse();
 	}
+	@Override
+	public List<Video> finAllVideos() {
+		return vm.selectByExample(null);
+	}
+	@Override
+	public Video findVideoByVideoId(Integer videoId) {
+		// TODO Auto-generated method stub
+		return vm.findVideoByVideoId(videoId);
+	}
+	@Override
+	public List<Video> finAllVideosByCId(Integer cId) {
+		return vm.finAllVideosByCId(cId);
+	}
+	@Override
+	public int findSIdByCid(Integer courseId) {
+		return vm.findSid(courseId);
+	}
 	
 	
 	

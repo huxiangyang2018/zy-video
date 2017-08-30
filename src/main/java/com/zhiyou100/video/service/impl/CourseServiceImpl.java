@@ -45,4 +45,10 @@ public class CourseServiceImpl implements CourseService{
 		
 	}
 
+	@Override
+	public List<Course> findFrontCourse(Integer subjectId) {
+		
+		return cm.findFrontCourse(subjectId);
+	}
+
 }

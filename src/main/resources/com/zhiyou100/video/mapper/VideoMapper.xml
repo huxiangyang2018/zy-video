@@ -14,7 +14,10 @@
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="video_play_times" property="videoPlayTimes" jdbcType="INTEGER" />
     <result column="speaker_name" property="speakerName" jdbcType="VARCHAR" />
+    <result column="speaker_head_url" property="speakerHeadUrl" jdbcType="VARCHAR" />
+    <result column="speaker_descr" property="speakerDescr" jdbcType="VARCHAR" />
     <result column="course_name" property="courseName" jdbcType="VARCHAR" />
+    <result column="course_descr" property="courseDescr" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -397,9 +400,27 @@
   v.course_id = c.id group by course_id;
   </select>
   
+  <select id="findVideoByVideoId" resultMap="BaseResultMap">
+  	select v.*,s.speaker_name,s.speaker_head_url,s.speaker_descr,
+  	c.course_name,c.course_descr
+  	from video v
+  	left join speaker s on v.speaker_id = s.id
+  	left join course c on v.course_id = c.id
+  	where v.id = #{videoId}
+  </select>
   
-  
-  
-  
-  
+  <select id="finAllVideosByCId" resultMap="BaseResultMap">
+  	select v.*,s.speaker_name
+  	from video v
+  	left join speaker s on v.speaker_id = s.id
+  	left join course c on v.course_id = c.id
+  	where v.course_id = #{cId}
+  </select>
+ 
+ <select id="findSid" resultType="Integer">
+ 	select subject_id from course c
+ 	where c.id = #{courseId}
+ </select>
+ 
+ 
 </mapper>

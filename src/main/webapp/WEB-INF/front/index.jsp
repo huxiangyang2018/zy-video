@@ -52,7 +52,7 @@
                             </a>
                         </td>
                         <td rowspan="2" class="one_three">
-                            <a href="#" class="opacity5">
+                            <a href="front/user/index.action" class="opacity5">
                                 <img src="static/img/java.jpg" alt="" class="image" draggable="false">
                                 <div class="headline">
                                     <span>Java教程</span>
@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#" class="opacity5">
+                            <a href="front/user/index.action" class="opacity5">
                                 <img src="static/img/bigdata.jpg" alt="" class="image" draggable="false">
                                 <div class="headline">
                                     <span>大数据教程</span>
