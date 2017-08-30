@@ -48,7 +48,7 @@
 						</p>
 					</div>
 					<ul>
-						<c:forEach items="${course.videoList }" var="video">
+						<c:forEach items="${course.videoList}" var="video">
 							<li class="section-main" onclick="getVideo(${video.id})">
 							<div class="thum" style="background-image: url(${video.videoImageUrl})"></div>
 								<p>${video.videoTitle }</p>

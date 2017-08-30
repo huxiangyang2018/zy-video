@@ -11,7 +11,7 @@
     <result column="subject_name" property="subjectName" jdbcType="VARCHAR" />
     <result column="subject_id" property="subjectId" jdbcType="INTEGER" />
     <collection property="videoList" ofType="com.zhiyou100.video.model.Video">
-    	<result column="id" property="id"/>
+    	<result column="vId" property="id"/>
     	<result column="video_image_url" property="videoImageUrl"/>
     	<result column="video_play_times" property="videoPlayTimes"/>
     	<result column="video_length" property="videoLength"/>
@@ -242,7 +242,7 @@
   </select>
   
   <select id="findFrontCourse" resultMap="BaseResultMap">
-	select c.*,v.id,v.video_image_url,v.video_play_times,v.video_length,v.video_title
+	select c.*,v.id vId,v.video_image_url,v.video_play_times,v.video_length,v.video_title
 	from course c
 	left join video v on c.id = course_id
 	where  c.subject_id = #{subjectId} 

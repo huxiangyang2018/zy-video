@@ -2,6 +2,7 @@ package com.zhiyou100.video.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.UUID;
 
@@ -74,6 +75,7 @@ public class UserController {
 	@RequestMapping(value="/profile.action",method=RequestMethod.POST)
 	public String profile(User u,HttpSession se){
 		int id = u.getId();
+		u.setUpdateTime(new Timestamp(System.currentTimeMillis()));
 		us.updateUser(u);
 		User user = us.findUserById(id);
 		se.setAttribute("user", user);
@@ -139,6 +141,7 @@ public class UserController {
 		List<User> list = us.findEmailByMail(u.getEmail());
 		Status status = new Status();
 		if(list.isEmpty()){
+			u.setInsertTime(new Timestamp(System.currentTimeMillis()));
 			us.addUser(u);
 			se.setAttribute("user", u);
 			status.setSuccess(true);
