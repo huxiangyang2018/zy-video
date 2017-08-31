@@ -45,7 +45,7 @@
 				if(!confirm("你确定要删除这"+time+"条吗?")){
 					window.event.returnValue = false;
 				}else{
-					document.getElementById("videoform").action="${pageContext.request.contextPath }/video/deleteVideos.action"
+					document.getElementById("videoform").action="${pageContext.request.contextPath }/admin/video/deleteVideos.action"
 					document.getElementById("videoform").submit();
 					return true;
 				}
@@ -62,8 +62,8 @@
 			</div>
 		</div>
 
-		<form class="form-inline" action="${pageContext.request.contextPath }/video/videoManage.action" id="videoform">
-			<a href="${pageContext.request.contextPath }/video/addVideo.action" class="btn btn-primary col-md-offset-2"
+		<form class="form-inline" action="${pageContext.request.contextPath }/admin/video/videoManage.action" id="videoform">
+			<a href="${pageContext.request.contextPath }/admin/video/addVideo.action" class="btn btn-primary col-md-offset-2"
 				role="button">添加视频</a> 
 			<a  onclick="return deleteVideos()" class="btn btn-primary" role="button">
 					批量删除<span class="badge" id="delete">0</span>
@@ -126,11 +126,11 @@
 								<td>${v.videoLength }</td>
 								<td>${v.videoPlayTimes }</td>
 								<td><a
-									href="${pageContext.request.contextPath }/video/updateVideo.action?id=${v.id}">
+									href="${pageContext.request.contextPath }/admin/video/updateVideo.action?id=${v.id}">
 										<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								</a></td>
 								<td><a
-									href="${pageContext.request.contextPath }/video/deleteVideo.action?id=${v.id}">
+									href="${pageContext.request.contextPath }/admin/video/deleteVideo.action?id=${v.id}">
 										<span onclick="deleteVideo()" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 								</a></td>
 							</tr>
@@ -139,7 +139,7 @@
 				</table>
 				<div class="col-md-offset-3">
 					<zhr:page
-						url="${pageContext.request.contextPath }/video/videoManage.action">
+						url="${pageContext.request.contextPath }/admin/video/videoManage.action">
 					</zhr:page>
 				</div>
 			</div>

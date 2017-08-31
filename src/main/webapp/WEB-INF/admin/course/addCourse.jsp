@@ -27,7 +27,7 @@
 	
 	
 	
-	<form class="form-horizontal" action="${pageContext.request.contextPath }/course/addCourse.action" method="post">
+	<form class="form-horizontal" action="${pageContext.request.contextPath }/admin/course/addCourse.action" method="post">
   		
   		<div class="form-group">
   			<label for="inputEmail3" class="col-md-3 control-label">所属学科</label>

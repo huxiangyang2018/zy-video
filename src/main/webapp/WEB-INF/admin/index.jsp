@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
+  <base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +54,7 @@
   	</style>
   <body>
   		<div class="login" >
-            <img src="../img/logo.png" alt="智游" class="img-rounded">
+            <img src="img/logo.png" alt="智游" class="img-rounded">
         </div>
   		<form action="<c:url value="/admin/index.action"/>" method="post" id="checkForm">
   			<div class="form-group">

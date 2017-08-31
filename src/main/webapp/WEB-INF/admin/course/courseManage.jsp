@@ -25,7 +25,7 @@
   <div class="nav-bar row">	
 	<div class="col-md-2 col-md-offset-2">
 		<div class="actions">
-			<a class="btn btn-primary" href="${pageContext.request.contextPath }/course/addCourse.action">添加课程</a>
+			<a class="btn btn-primary" href="${pageContext.request.contextPath }/admin/course/addCourse.action">添加课程</a>
 		</div>
 	</div>
   </div>
@@ -46,10 +46,10 @@
                 <td>${ c.courseName }</td>
                 <td>${ c.subjectName }</td>
                 <td>${ c.courseDescr }</td>
-                <td><a href="${pageContext.request.contextPath }/course/updateCourse.action?id=${c.id}">
+                <td><a href="${pageContext.request.contextPath }/admin/course/updateCourse.action?id=${c.id}">
 					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 				</a></td>
-				<td><a href="${pageContext.request.contextPath }/course/deleteCourse.action?id=${c.id}">
+				<td><a href="${pageContext.request.contextPath }/admin/course/deleteCourse.action?id=${c.id}">
 					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 				</a></td>
             </tr>

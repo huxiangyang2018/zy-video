@@ -16,6 +16,7 @@ import com.zhiyou100.video.service.SubjectService;
 
 
 @Controller
+@RequestMapping("/admin")
 public class CourseController {
 
 	@Autowired

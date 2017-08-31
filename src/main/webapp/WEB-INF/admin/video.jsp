@@ -27,16 +27,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a target="pageBox"  href="<c:url value="/video/videoManage.action" />">
+            <li><a target="pageBox"  href="<c:url value="/admin/video/videoManage.action" />">
                 <i class=" fa fa-circle-thin"></i>视频管理</a>
             </li>
-            <li><a target="pageBox"  href="<c:url value="/speaker/speakerManage.action" />">
+            <li><a target="pageBox"  href="<c:url value="/admin/speaker/speakerManage.action" />">
                 <i class=" fa fa-circle-thin"></i>主讲人管理</a>
             </li>
-            <li><a target="pageBox"  href="<c:url value="/course/courseManage.action" />">
+            <li><a target="pageBox"  href="<c:url value="/admin/course/courseManage.action" />">
                 <i class=" fa fa-circle-thin"></i>课程管理</a>
             </li>
-            <li><a target="pageBox"  href="<c:url value="/count/countManage.action" />">统计分析</a></li>
+            <li><a target="pageBox"  href="<c:url value="/admin/count/countManage.action" />">统计分析</a></li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,7 @@
       </div>
     </nav>
     <div class="embed-responsive embed-responsive-4by3">
-  <iframe name="pageBox" class="embed-responsive-item" src="<c:url value="/video/videoManage.action" />"></iframe>
+  <iframe name="pageBox" class="embed-responsive-item" src="<c:url value="/admin/video/videoManage.action" />"></iframe>
 </div>
   </body>
 </html>

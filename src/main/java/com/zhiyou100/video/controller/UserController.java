@@ -207,10 +207,13 @@ public class UserController {
 	//重置密码
 	@RequestMapping("/resetpwd.action")
 	public String reset(User u,HttpSession se){
-		us.updateUserSelect(u);
+		u.setCaptcha("");//清验证码
+		us.updateUserSelect(u);//更新密码
 		List<User> list = us.findEmailByMail(u.getEmail());
 		User user = list.get(0);
+		int id = user.getId();
 		se.setAttribute("user", user);
+		se.setAttribute("id",id);
 		return "front/index";
 	}
 	//退出

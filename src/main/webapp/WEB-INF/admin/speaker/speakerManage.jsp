@@ -30,7 +30,7 @@
 	
 	<div class="col-md-2 col-md-offset-2">
 		<div class="actions">
-					<a class="btn btn-primary" href="${pageContext.request.contextPath }/speaker/addSpeaker.action">添加主讲人</a>
+					<a class="btn btn-primary" href="${pageContext.request.contextPath }/admin/speaker/addSpeaker.action">添加主讲人</a>
 		</div>
 		</div>
 		<div class="col-md-offset-3 col-md-4">
@@ -64,17 +64,17 @@
                 <td>${ speaker.speakerName }</td>
                 <td>${ speaker.speakerJob }</td>
                 <td>${ speaker.speakerDescr }</td>
-                <td><a href="${pageContext.request.contextPath }/speaker/updateSpeaker.action?id=${speaker.id}">
+                <td><a href="${pageContext.request.contextPath }/admin/speaker/updateSpeaker.action?id=${speaker.id}">
 					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 				</a></td>
-				<td><a href="${pageContext.request.contextPath }/speaker/deleteSpeaker.action?id=${speaker.id}">
+				<td><a href="${pageContext.request.contextPath }/admin/speaker/deleteSpeaker.action?id=${speaker.id}">
 					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 				</a></td>
             </tr>
             </c:forEach>
     </table>
     <div class="col-md-offset-3">
-    <zhr:page url="${pageContext.request.contextPath}/speaker/speakerManage.action"></zhr:page>
+    <zhr:page url="${pageContext.request.contextPath}/admin/speaker/speakerManage.action"></zhr:page>
     </div>
     </div>
   </body>

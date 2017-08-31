@@ -15,6 +15,7 @@ import com.zhiyou100.video.model.View;
 import com.zhiyou100.video.service.VideoService;
 
 @Controller
+@RequestMapping("/admin")
 public class CountController {
 
 	@Autowired

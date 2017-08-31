@@ -16,6 +16,7 @@ import com.zhiyou100.video.service.SpeakerService;
 import com.zhiyou100.video.util.Page;
 
 @Controller
+@RequestMapping("/admin")
 public class SpeakerController {
 
 	@Autowired
