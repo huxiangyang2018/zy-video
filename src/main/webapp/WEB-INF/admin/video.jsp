@@ -40,7 +40,7 @@
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
-        		<li><a href="#">${admin.loginName }<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+        		<li><a href="loginOut.action">${admin.loginName }<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
       		</ul>
       		
         </div>

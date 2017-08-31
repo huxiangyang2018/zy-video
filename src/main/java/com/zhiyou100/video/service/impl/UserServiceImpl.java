@@ -49,9 +49,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<User> findUserByPwd(String pwd) {
+	public List<User> findUserByPwd(String pwd,int id) {
 		UserExample ue = new UserExample();
-		ue.createCriteria().andPasswordEqualTo(pwd);
+		ue.createCriteria().andPasswordEqualTo(pwd).andIdEqualTo(id);
 		return um.selectByExample(ue);
 	}
 

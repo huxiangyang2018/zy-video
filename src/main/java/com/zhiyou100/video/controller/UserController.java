@@ -110,12 +110,13 @@ public class UserController {
 	//检查老密码
 	@RequestMapping(value="/checkPwd.action",method=RequestMethod.POST)
 	@ResponseBody
-	public String checkPwd(String oldPassword) throws JsonProcessingException{
+	public String checkPwd(String oldPassword,Integer id) throws JsonProcessingException{
 		String pwd = MD5Utils.getMD5(oldPassword);
-		List<User> list = us.findUserByPwd(pwd);
+		List<User> list = us.findUserByPwd(pwd,id);
 		Status status = new Status();
 		if(!list.isEmpty()){
 			status.setSuccess(true);
+			status.setMessage("修改成功,请妥善保管密码!");
 			String json = tt.transToJson(status);
 			return json;
 		}else{
@@ -126,7 +127,11 @@ public class UserController {
 	}
 	//设置新密码
 	@RequestMapping(value="/password.action",method=RequestMethod.POST)
-	public String password(){
+	public String password(String newPassword,String oldPassword,Integer id){
+		String pwd = MD5Utils.getMD5(oldPassword);
+		List<User> list = us.findUserByPwd(pwd,id);
+		list.get(0).setPassword(newPassword);
+		us.updateUser(list.get(0));
 		return "front/user/password";
 	}
 	//注册检测

@@ -52,7 +52,7 @@
                             </a>
                         </td>
                         <td rowspan="2" class="one_three">
-                            <a href="front/user/index.action" class="opacity5">
+                            <a href="front/index.action" class="opacity5">
                                 <img src="static/img/java.jpg" alt="" class="image" draggable="false">
                                 <div class="headline">
                                     <span>Java教程</span>
@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="front/user/index.action" class="opacity5">
+                            <a href="front/index.action" class="opacity5">
                                 <img src="static/img/bigdata.jpg" alt="" class="image" draggable="false">
                                 <div class="headline">
                                     <span>大数据教程</span>
@@ -112,7 +112,7 @@
     <div class="form_area">
         <div class="container">
             <p class="title"><b>这个世界上可以选择的很多，可以改变命运的选择很少<br />你现在准备好向梦想出发了吗？</b></p>
-            <form id="iform" action="/090/plus/dmail.php" enctype="multipart/form-data" method="post">
+            <form id="iform" action="front/index.action" enctype="multipart/form-data" method="post">
                 <div class="form_line1"></div>
                 <div class="form_line2"></div>
                 <div class="wrap">

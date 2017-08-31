@@ -68,6 +68,7 @@
                                     <input type="password" id="newPassword02" name="newPasswordAgain">
                                 </div>
                                 <div class="form_submit dd">
+                                	<input type="hidden" name="id" value="${id}">
                                     <input type="submit" value="保&#x3000;存">
                                 </div>
                             </form>

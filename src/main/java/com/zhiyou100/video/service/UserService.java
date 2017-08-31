@@ -16,7 +16,7 @@ public interface UserService {
 
 	void updateUserSelect(User u);
 
-	List<User> findUserByPwd(String pwd);
+	List<User> findUserByPwd(String pwd,int id);
 
 	User findUserById(int id);
 

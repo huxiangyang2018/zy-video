@@ -35,7 +35,7 @@
                         <span>通过注册邮箱重设密码</span>
                     </div>
                     <div class="form_back">
-                        <a href="index.action">返回立即登录</a>
+                        <a href="front/index.action">返回立即登录</a>
                     </div>
                 </div>
                 <div class="form_body">

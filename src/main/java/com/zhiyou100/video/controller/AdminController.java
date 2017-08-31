@@ -2,6 +2,7 @@ package com.zhiyou100.video.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +26,6 @@ public class AdminController {
 		return "admin/index";
 	}
 	
-	
 	@RequestMapping(value="/index.action",method=RequestMethod.POST)
 	public String adminlogin(Admin av,HttpServletRequest req,HttpServletResponse res){
 		Admin a =as.login(av);
@@ -38,5 +38,12 @@ public class AdminController {
 			return "admin/video";
 		}
 	}
+	
+	@RequestMapping(value="/loginOut.action",method=RequestMethod.GET)
+	public String loginOut(HttpSession se){
+		se.removeAttribute("admin");
+		return "redirect:/front/index.action";
+	}
+	
 	
 }

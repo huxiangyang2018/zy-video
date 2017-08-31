@@ -10,7 +10,7 @@
 		<c:if test="${not empty user}">
 			<div id="userBlock" style="float:right">
 				<a href="front/user/logout.action">退出</a>
-				<a href="front/user/person.action" id="account">${user.email}</a>
+				<a href="front/user/person.action" id="account">${user.nickName}</a>
 			</div>
 		</c:if>
 		<c:if test="${empty user}">
