@@ -12,6 +12,7 @@ import com.zhiyou100.video.model.Admin;
 import com.zhiyou100.video.service.AdminService;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 
 	

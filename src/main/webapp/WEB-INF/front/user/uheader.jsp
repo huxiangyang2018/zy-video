@@ -18,7 +18,7 @@
 	<menu>
 		<div class="container clearfix">
 			<ul class="clearfix f_left">
-				<li><a href="front/user/index.action">首页</a></li>
+				<li><a href="front/index.action">首页</a></li>
 				<li class="menu_active"><a href="front/user/person.action">个人中心</a></li>
 			</ul>
 			<div id="user_bar">

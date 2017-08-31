@@ -25,7 +25,7 @@
             <img src="static/img/logo.png" alt="智游">
         </div>
     </header>
-    <main>
+    
         <div class="container">
             <form class="ma" action="front/user/resetpwd.action" method="post" id="reset">
                <input type="hidden" name="email" value="${email}"/>
@@ -44,7 +44,7 @@
                 
             </form>
         </div>
-    </main>
+    
 <%@include file="../include/script.html"%>    
     <script type="text/javascript">
     $('#reset').validate({

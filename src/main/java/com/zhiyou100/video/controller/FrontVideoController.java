@@ -22,7 +22,7 @@ public class FrontVideoController {
 	
 	@Autowired
 	VideoService vs;
-	
+	//进入视频界面,观看视频
 	@RequestMapping("/index.action")
 	public String index(Integer subjectId,Integer videoId,Model md){
 		md.addAttribute("videoId", videoId);
@@ -30,7 +30,7 @@ public class FrontVideoController {
 		md.addAttribute("subject", sub);
 		return "front/video/index";
 	}
-	
+	//返回视频内容
 	@RequestMapping("/videoData.action")
 	public String videoData(Integer videoId,Model md){
 		Video video = vs.findVideoByVideoId(videoId);
@@ -41,7 +41,7 @@ public class FrontVideoController {
 		md.addAttribute("videoList", videoList);
 		return "front/video/content";
 	}
-	
+	//统计播放次数
 	@RequestMapping("/state.action")
 	public void state(@RequestParam(defaultValue="0")Integer videoId){
 		Video video = vs.findVideoById(videoId);

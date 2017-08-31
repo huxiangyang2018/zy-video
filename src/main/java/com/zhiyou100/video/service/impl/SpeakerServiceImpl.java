@@ -17,6 +17,7 @@ public class SpeakerServiceImpl implements SpeakerService {
 	@Autowired
 	SpeakerMapper sm;
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Page findSpeaker(SpeakerVO sv) {
 		

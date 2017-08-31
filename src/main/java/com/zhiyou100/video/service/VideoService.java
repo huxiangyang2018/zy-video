@@ -10,6 +10,7 @@ import com.zhiyou100.video.util.Page;
 public interface VideoService {
 
 
+	@SuppressWarnings("rawtypes")
 	Page findVideos(Video v);
 
 	void addVideo(Video v);

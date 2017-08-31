@@ -9,6 +9,7 @@ import com.zhiyou100.video.util.Page;
 
 public interface SpeakerService {
 
+	@SuppressWarnings("rawtypes")
 	Page findSpeaker(SpeakerVO sv);
 
 	List<Speaker> findSpeakers();

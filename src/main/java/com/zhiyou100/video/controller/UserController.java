@@ -33,11 +33,6 @@ public class UserController {
 	UserService us;
 	
 	TransToJson tt = new TransToJson();
-	//初始化的主界面
-	@RequestMapping("/index.action")
-	public String uIndex(){
-		return "front/index";
-	}
 	
 	//登录
 		@RequestMapping(value="/login.action",method=RequestMethod.POST)
@@ -222,6 +217,6 @@ public class UserController {
 	@RequestMapping("/logout.action")
 	public String loginOut(HttpSession se){
 		se.invalidate();
-		return "redirect:index.action";
+		return "redirect:/front/index.action";
 	}
 }

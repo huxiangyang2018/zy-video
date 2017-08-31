@@ -15,6 +15,7 @@ public class VideoServiceImpl implements VideoService {
 
 	@Autowired
 	VideoMapper vm;
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Page findVideos(Video v) {
 		Page page = new Page();

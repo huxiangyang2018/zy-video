@@ -26,7 +26,7 @@
             <img src="static/img/logo.png" alt="智游">
         </div>
     </header>
-    <main>
+  
         <div class="container">
             <form class="ma" id="mailForm" action="front/user/forgetpwd.action" method="post">
                 <div class="form_header">
@@ -51,7 +51,7 @@
             </form>
         </div>
         
-    </main>
+   
 <%@include file="../include/script.html"%>
     <script type="text/javascript">
 		function submitEmail(){

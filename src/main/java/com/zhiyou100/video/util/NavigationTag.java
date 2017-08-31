@@ -33,7 +33,8 @@ public class NavigationTag extends TagSupport {
     public int doStartTag() throws JspException {
         JspWriter writer = pageContext.getOut();
         HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-        Page page = (Page)request.getAttribute(bean); 
+        @SuppressWarnings("rawtypes")
+		Page page = (Page)request.getAttribute(bean); 
         if (page == null) 
             return SKIP_BODY;
         url = resolveUrl(url, pageContext);
@@ -116,7 +117,8 @@ public class NavigationTag extends TagSupport {
      * 
      */
     private String resolveUrl(String url, javax.servlet.jsp.PageContext pageContext) throws JspException{
-    	Map params = pageContext.getRequest().getParameterMap();
+    	@SuppressWarnings("rawtypes")
+		Map params = pageContext.getRequest().getParameterMap();
     	for (Object key:params.keySet()) {
     		if ("page".equals(key) || "rows".equals(key)) continue;
     		Object value = params.get(key);

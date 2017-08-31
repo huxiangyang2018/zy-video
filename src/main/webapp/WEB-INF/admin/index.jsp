@@ -49,9 +49,9 @@
   	</style>
   <body>
   		<div class="login" >
-            <img src="img/logo.png" alt="智游" class="img-rounded">
+            <img src="../img/logo.png" alt="智游" class="img-rounded">
         </div>
-  		<form action="<c:url value="/index.action"/>" method="post" id="checkForm">
+  		<form action="<c:url value="/admin/index.action"/>" method="post" id="checkForm">
   			<div class="form-group">
     			<input type="text" class="form-control" name="loginName" id="loginName" placeholder="用户名" value="admin">
   			</div>

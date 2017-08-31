@@ -24,15 +24,26 @@
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 <property name="maxUploadSize" value="6291456"></property>
 </bean>
-<!-- <mvc:interceptors>
+<!-- 拦截器  -->
+<mvc:interceptors>
      <mvc:interceptor>
-         <mvc:mapping path="/**"/>
-         <bean class="com.zhiyou100.video.util.CustomInterceptor"></bean>
+         <mvc:mapping path="/admin/**"/>
+		 <mvc:exclude-mapping path="/admin/index.action"/>
+         <bean class="com.zhiyou100.video.util.AdminInterceptor"></bean>
      </mvc:interceptor>
-
-</mvc:interceptors> -->
-
-
-
+     
+     <mvc:interceptor>
+         <mvc:mapping path="/front/user/**"/>
+         <mvc:exclude-mapping path="/front/user/login.action"/>
+         <mvc:exclude-mapping path="/front/user/index.action"/>
+         <mvc:exclude-mapping path="/front/user/checkRegist.action"/>
+         <mvc:exclude-mapping path="/front/user/forgetpwd.action"/>
+         <mvc:exclude-mapping path="/front/user/sendemail.action"/>
+         <mvc:exclude-mapping path="/front/user/verify.action"/>
+         <mvc:exclude-mapping path="/front/user/resetpwd.action"/>
+         <mvc:exclude-mapping path="/front/user/index.jsp"/>
+         <bean class="com.zhiyou100.video.util.UserInterceptor"></bean>
+     </mvc:interceptor>
+</mvc:interceptors>
 
 </beans>

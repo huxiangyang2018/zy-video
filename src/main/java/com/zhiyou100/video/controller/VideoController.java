@@ -31,6 +31,7 @@ public class VideoController {
 	public String videoList(@RequestParam(defaultValue="1") Integer page, Video v,Model md){
 		
 		v.setPage(page);
+		@SuppressWarnings("rawtypes")
 		Page p = vs.findVideos(v);
 		
 //		List<Video> vList = vs.findVideos(v);

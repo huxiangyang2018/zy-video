@@ -54,7 +54,6 @@
 				</a></td>
             </tr>
             </c:forEach>
-    </div>
     </table>
    </div>
     

@@ -152,7 +152,7 @@
 		<div class="form-group">
     		<label for="inputEmail3" class="col-md-3 control-label">视频简介</label>
     		<div class="col-md-7">
-      			<textarea class="form-control" name="videoDescr" value="${ video.videoDescr }" rows="3"></textarea>
+      			<textarea class="form-control" name="videoDescr" rows="3">${ video.videoDescr }</textarea>
     		</div>
   		</div>
   		<div class="actions">

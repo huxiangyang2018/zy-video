@@ -1,8 +1,5 @@
 package com.zhiyou100.video.controller;
 
-
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,10 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.zhiyou100.video.model.Course;
 import com.zhiyou100.video.model.Speaker;
 import com.zhiyou100.video.model.SpeakerVO;
-import com.zhiyou100.video.model.Video;
 import com.zhiyou100.video.service.SpeakerService;
 import com.zhiyou100.video.util.Page;
 
@@ -40,6 +35,7 @@ public class SpeakerController {
 		sv.setSpeakerName(speakerName);
 		req.setAttribute("speakerName", speakerName);
 		req.setAttribute("speakerJob", speakerJob);
+		@SuppressWarnings("rawtypes")
 		Page page = ss.findSpeaker(sv);
 		req.setAttribute("page",page);
 		ModelAndView mv = new ModelAndView();

@@ -20,7 +20,7 @@ public class FrontCourseController {
 	SubjectService ss;
 	@Autowired
 	CourseService cs;
-	
+	//进入课程列表
 	@RequestMapping("/index.action")
 	public String index(Integer subjectId,Model md){
 		Subject sub = ss.findSubjectById(subjectId);

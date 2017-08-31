@@ -37,11 +37,13 @@ public class CountController {
 		mv.addAttribute("vList", vList);
 		return "count/countManage";
 	}*/
+	@SuppressWarnings("unchecked")
 	@RequestMapping("/count/countManag.action")
 	@ResponseBody
 	public String courseList(Model mv) throws Exception{
 		List<Video> vList = vs.findAvgCourse();
-		 List li = new LinkedList();
+		 @SuppressWarnings("rawtypes")
+		List li = new LinkedList();
 			for(Video v: vList){
 				View vi = new View();
 				vi.setId(v.getVideoPlayTimes());
